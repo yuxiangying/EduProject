@@ -1,0 +1,51 @@
+#loginDiv{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+#loginDiv_title{
+    width: 300px;
+    height: 40px;
+
+}
+#loginDiv_title_login{
+    width: 150px;
+    height: 40px;
+    float: left;
+    background: #1a77f0;
+}
+#loginDiv_title_register{
+    width: 150px;
+    height: 40px;
+    float: left;
+    background: #66a7fb;
+}
+.div_from{
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+    margin-top: 60px;
+}
+.userName{
+    height: 26px;
+}
+.pw{
+    height: 26px;
+}
+.sb{
+    border:none;
+    width: 80%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #1a77f0;
+    opacity:0.9;
+}
