@@ -23,7 +23,7 @@ public class UserController {
     @RequestMapping("login")
     public String login(){
         System.out.println("..........");
-        return "loginCtl";
+        return "manager/index";
     }
 
     @RequestMapping("find")
@@ -31,5 +31,10 @@ public class UserController {
         User user = this.userService.findById(id);
         System.out.println(user);
         return null;
+    }
+
+    @RequestMapping("article-list")
+    public String articlelist(){
+        return "manager/article-list";
     }
 }
