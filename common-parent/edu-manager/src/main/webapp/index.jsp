@@ -82,7 +82,7 @@
 </head>
 <body>
 <input type="hidden" id="TenantId" name="TenantId" value="" />
-<div class="header"></div>
+<%--<div class="header"></div>--%>
 <div class="loginWraper">
     <div id="loginform" class="loginBox">
         <form class="form form-horizontal" action="index.html" method="post">
@@ -119,9 +119,11 @@
         </form>
     </div>
 </div>
+<%--
 <div class="footer">Copyright 你的公司名称 by H-ui.admin v3.1</div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/managerstyle/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/managerstyle/static/h-ui/js/H-ui.min.js"></script>
+--%>
 <!--此乃百度统计代码，请自行删除-->
 <script>
     var _hmt = _hmt || [];

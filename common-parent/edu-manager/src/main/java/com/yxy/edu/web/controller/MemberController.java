@@ -25,7 +25,7 @@ public class MemberController {
     @RequestMapping("list")
     public String list(){
         System.out.println("..........");
-        return "manager/member-list";
+        return "managerPage/member-list";
     }
 
     /*
@@ -38,7 +38,7 @@ public class MemberController {
     @RequestMapping("del")
     public String del(){
         System.out.println("..........");
-        return "manager/member-del";
+        return "managerPage/member-del";
     }
     /*
      * @Author 余想英
@@ -50,7 +50,7 @@ public class MemberController {
     @RequestMapping("level")
     public String level(){
         System.out.println("..........");
-        return "manager/member-level";
+        return "managerPage/member-level";
     }
 
     /*
@@ -63,7 +63,7 @@ public class MemberController {
     @RequestMapping("scoreoperation")
     public String scoreoperation(){
         System.out.println("..........");
-        return "manager/member-scoreoperation";
+        return "managerPage/member-scoreoperation";
     }
 
     /*
@@ -76,7 +76,7 @@ public class MemberController {
     @RequestMapping("record-browse")
     public String recordBrowse(){
         System.out.println("..........");
-        return "manager/member-record-browse";
+        return "managerPage/member-record-browse";
     }
 
     /*
@@ -89,7 +89,7 @@ public class MemberController {
     @RequestMapping("record-download")
     public String recordDownload(){
         System.out.println("..........");
-        return "manager/member-record-download";
+        return "managerPage/member-record-download";
     }
 
     /*
@@ -102,7 +102,7 @@ public class MemberController {
     @RequestMapping("record-share")
     public String recordShare(){
         System.out.println("..........");
-        return "manager/member-record-share";
+        return "managerPage/member-record-share";
     }
 
 }

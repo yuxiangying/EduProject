@@ -31,7 +31,7 @@
 <div class="page-container">
     <div class="text-c">
         <form class="Huiform" method="post" action="" target="_self">
-            <input type="text" placeholder="分类名称" value="" class="input-text" style="width:120px">
+            <input type="text" placeholder="品种名称" value="" class="input-text" style="width:120px">
             <span class="btn-upload form-group">
 			<input class="input-text upload-url" type="text" name="uploadfile-2" id="uploadfile-2" readonly style="width:200px">
 			<a href="javascript:void();" class="btn btn-primary upload-btn"><i class="Hui-iconfont">&#xe642;</i> 上传logo</a>
