@@ -150,7 +150,7 @@
     insert into T_PRODUCT_BRAND (ID, BRANDNAME, LOGONAME, 
       PLACE, REMARK, CREATETIME, 
       UPDATETIME)
-    values (#{id,jdbcType=DECIMAL}, #{brandname,jdbcType=VARCHAR}, #{logoname,jdbcType=VARCHAR}, 
+    values (SEQ_PRODUCT_BRAND.nextval, #{brandname,jdbcType=VARCHAR}, #{logoname,jdbcType=VARCHAR},
       #{place,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
       #{updatetime,jdbcType=TIMESTAMP})
   </insert>

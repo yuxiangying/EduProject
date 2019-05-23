@@ -1,6 +1,7 @@
 package com.yxy.edu.web.controller;
 
 import com.yxy.edu.model.User;
+import com.yxy.edu.service.IUserService;
 import com.yxy.edu.web.utils.RandomValidateCode;
 import com.yxy.edu.web.utils.Result;
 import org.apache.log4j.Logger;
@@ -8,13 +9,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author : yuxiangying
@@ -25,8 +30,10 @@ import java.io.IOException;
  * @date Date : 2019年05月20日 10:35
  */
 @Controller
+@RequestMapping("login")
 public class LoginController {
-
+    @Resource
+    private IUserService userService;
 //   private static Logger logger = (Logger) LoggerFactory.getLogger(LoginCtrl.class);
     /**
      * @Author 余想英
@@ -63,31 +70,45 @@ public class LoginController {
      */
     @RequestMapping(value = "/userLogin",method = RequestMethod.POST)
     @ResponseBody
-    public Result userLogin(HttpServletRequest request, HttpServletResponse response){
+    public Result userLogin(HttpServletRequest request, HttpServletResponse response,
+                            @RequestParam String userName,
+                            @RequestParam String password,
+                            @RequestParam String verifyCode){
         HttpSession session = request.getSession();
-       /* String userName = request.getParameter("loginname");
-        String password = request.getParameter("password");*/
-        /*String verifyCode= request.getParameter("verifyCode");
-        String sessionVerifyCode = (String) session.getAttribute(RandomValidateCode.RANDOMCODEKEY);*/
-        User user = new User();
-        user.setId(1);
-//        return "managerPage/index";
-        return Result.error(1,"登录失败,验证码输入有误！");
-//        return user;
-        /*if(!verifyCode.equalsIgnoreCase(sessionVerifyCode)){
-            return null;
+        /*String userName = request.getParameter("loginname");
+        String password = request.getParameter("password");
+        String verifyCode= request.getParameter("verifyCode");*/
+        String sessionVerifyCode = (String) session.getAttribute(RandomValidateCode.RANDOMCODEKEY);
+        if(!verifyCode.equalsIgnoreCase(sessionVerifyCode)){
 //            logger.info("<--登录失败,验证码输入有误！-->");
-            //return Result.error(1,"登录失败,验证码输入有误！");
+            return Result.error(1,"验证码错误！");
         }else{
-            //return Result.error(2,"用户名或密码错误！");
-            return user;
-        }*/
+            User userTemp = new User();
+            userTemp.setUsercode(userName);
+            userTemp.setPassword(password);
+            User user = userService.login(userTemp);
+            if(user!=null){
+                session.removeAttribute("UserInfo");
+                session.setAttribute("UserInfo",user);
+                return Result.success(3,"登录成功！");
+            }else {
+                return Result.error(2,"用户名或密码错误");
+            }
+
+        }
+
     }
 
-    @RequestMapping("/login")
-    @ResponseBody
-    public boolean login(String username,String password){
-        return "admin".equals(username)&&"123456".equals(password) ? true : false;
+    @RequestMapping("/checkUserRole")
+    public String checkUserRole(HttpServletRequest request, HttpServletResponse response){
+        HttpSession session = request.getSession();
+        User userInfo = (User) session.getAttribute("UserInfo");
+        if("manager".equals(userInfo.getRole())){
+            return "managerPage/index";
+        }else{
+            return "productPage/index";
+        }
     }
+
 
 }

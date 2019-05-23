@@ -1,6 +1,6 @@
 package com.yxy.edu.service;
 
-import com.yxy.edu.model.User;
+import com.yxy.edu.model.ProductBrand;
 import com.yxy.edu.service.base.IBaseService;
 
 /**
@@ -9,10 +9,7 @@ import com.yxy.edu.service.base.IBaseService;
  * @Project: EduProject
  * @Package com.yxy.edu.service
  * @Description: TODO
- * @date Date : 2019年05月15日 10:59
+ * @date Date : 2019年05月22日 17:46
  */
-public interface IUserService extends IBaseService<User> {
-//    特有的方法
-    public User login(User user);
-
+public interface IProductBrandService extends IBaseService<ProductBrand> {
 }

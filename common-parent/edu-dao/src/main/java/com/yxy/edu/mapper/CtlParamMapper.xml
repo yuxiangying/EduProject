@@ -315,4 +315,12 @@
     where CTL_TYPE = #{ctlType,jdbcType=VARCHAR}
       and CTL_CODE = #{ctlCode,jdbcType=VARCHAR}
   </update>
+
+  <select id="selectByType" resultMap="BaseResultMap" parameterType="java.lang.String">
+        SELECT
+          <include refid="Base_Column_List" />
+        FROM T_CTL_PARAM
+        WHERE CTL_TYPE = #{ctlType,jdbcType=VARCHAR}
+    </select>
+
 </mapper>

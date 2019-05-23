@@ -94,4 +94,6 @@ public interface CtlParamMapper {
      * @mbggenerated Thu May 16 18:53:42 CST 2019
      */
     int updateByPrimaryKey(CtlParam record);
+
+    List<CtlParam> selectByType(String ctlType);
 }

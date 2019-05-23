@@ -21,7 +21,7 @@
     <!--公共的版本号管理-->
     <properties>
         <junit.version>4.11</junit.version>
-        <!--<pring.version>4.3.14.RELEASE</pring.version>-->
+        <!--<pring.version>4.3.5.RELEASE</pring.version>-->
         <pring.version>4.3.5.RELEASE</pring.version>
         <!-- mybatis版本号 -->
         <mybatis.version>3.4.1</mybatis.version>

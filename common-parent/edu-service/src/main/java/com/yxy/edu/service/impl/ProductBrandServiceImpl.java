@@ -1,14 +1,12 @@
 package com.yxy.edu.service.impl;
 
-import com.yxy.edu.mapper.UserMapper;
-import com.yxy.edu.model.User;
-import com.yxy.edu.service.IUserService;
+import com.yxy.edu.mapper.ProductBrandMapper;
+import com.yxy.edu.model.ProductBrand;
+import com.yxy.edu.service.IProductBrandService;
 import com.yxy.edu.service.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Resource;
 
 /**
  * @author : yuxiangying
@@ -16,26 +14,20 @@ import javax.annotation.Resource;
  * @Project: EduProject
  * @Package com.yxy.edu.service.impl
  * @Description: TODO
- * @date Date : 2019年05月15日 11:04
+ * @date Date : 2019年05月22日 17:47
  */
 @Service
 @Transactional
-public class UserServiceImpl extends BaseServiceImpl<User> implements IUserService {
+public class ProductBrandServiceImpl extends BaseServiceImpl<ProductBrand> implements IProductBrandService {
     @Autowired
-    private UserMapper userMapper;
-
+    private ProductBrandMapper productBrandMapper;
     @Override
-    public User login(User user) {
-        return userMapper.login(user);
+    public ProductBrand findById(Integer id) {
+        return null;
     }
 
     @Override
-    public User findById(Integer id) {
-        return userMapper.selectByPrimaryKey(id);
-    }
-
-    @Override
-    public User findByUUID(String uuid) {
+    public ProductBrand findByUUID(String uuid) {
         return null;
     }
 
@@ -50,12 +42,12 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements IUserServi
     }
 
     @Override
-    public void update(User user) {
+    public void update(ProductBrand productBrand) {
 
     }
 
     @Override
-    public void save(User user) {
-
+    public void save(ProductBrand productBrand) {
+        this.productBrandMapper.insert(productBrand);
     }
 }

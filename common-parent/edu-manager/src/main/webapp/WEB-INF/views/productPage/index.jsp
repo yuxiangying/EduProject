@@ -8,24 +8,25 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
     <title>Flower Shop</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/userstyle/css/style.css" />
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jar/jquery-3.2.1.min.js"></script>
+    <base href="<%=basePath+"/"%>"><%--此作用就是省略写全路径--%>
+    <link rel="stylesheet" type="text/css" href="userstyle/css/style.css" />
+    <script type="text/javascript" src="js/jar/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <div id="wrap">
 
     <div class="header">
-        <div class="logo"><a href="index.html"><img src="${pageContext.request.contextPath}/userstyle/images/logo.gif" alt="" title="" border="0" /></a></div>
+        <div class="logo"><a href="index.html"><img src="userstyle/images/logo.gif" alt="" title="" border="0" /></a></div>
         <div id="menu">
             <ul>
-                <li class="selected"><a href="${pageContext.request.contextPath}/product/home" target="leftContentFrameName">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
-                <li><a href="${pageContext.request.contextPath}/product/category" target="leftContentFrameName">所有鲜花</a></li>
-                <li><a href="${pageContext.request.contextPath}/product/specials" target="leftContentFrameName">主题鲜花</a></li>
+                <li class="selected"><a href="product/home" target="leftContentFrameName">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+                <li><a href="product/category" target="leftContentFrameName">所有鲜花</a></li>
+                <li><a href="product/specials" target="leftContentFrameName">主题鲜花</a></li>
                 <%--<li><a href="myaccount.html">my accout</a></li>--%>
-                <li><a href="${pageContext.request.contextPath}/product/register" target="leftContentFrameName">用户注册</a></li>
-                <li><a href="${pageContext.request.contextPath}/product/details" target="leftContentFrameName">鲜花咨讯</a></li>
-                <li><a href="${pageContext.request.contextPath}/product/about" target="leftContentFrameName">关于我们</a></li>
-                <li><a href="${pageContext.request.contextPath}/product/contact" target="leftContentFrameName">联系我们</a></li>
+                <li><a href="product/register" target="leftContentFrameName">用户注册</a></li>
+                <li><a href="product/details" target="leftContentFrameName">鲜花咨讯</a></li>
+                <li><a href="product/about" target="leftContentFrameName">关于我们</a></li>
+                <li><a href="product/contact" target="leftContentFrameName">联系我们</a></li>
             </ul>
         </div>
 
@@ -36,11 +37,11 @@
     <div class="center_content">
         <div class="left_content">
 
-            <%--<div class="title"><span class="title_icon"><img src="${pageContext.request.contextPath}/userstyle/images/bullet1.gif" alt="" title="" /></span>Featured products</div>
+            <%--<div class="title"><span class="title_icon"><img src="userstyle/images/bullet1.gif" alt="" title="" /></span>Featured products</div>
 
             <div class="feat_prod_box">
 
-                <div class="prod_img"><a href="details.html"><img src="${pageContext.request.contextPath}/userstyle/images/prod1.gif" alt="" title="" border="0" /></a></div>
+                <div class="prod_img"><a href="details.html"><img src="userstyle/images/prod1.gif" alt="" title="" border="0" /></a></div>
 
                 <div class="prod_det_box">
                     <div class="box_top"></div>
@@ -59,7 +60,7 @@
 
             <div class="feat_prod_box">
 
-                <div class="prod_img"><a href="details.html"><img src="${pageContext.request.contextPath}/userstyle/images/prod2.gif" alt="" title="" border="0" /></a></div>
+                <div class="prod_img"><a href="details.html"><img src="userstyle/images/prod2.gif" alt="" title="" border="0" /></a></div>
 
                 <div class="prod_det_box">
                     <div class="box_top"></div>
@@ -77,31 +78,31 @@
 
 
 
-            <div class="title"><span class="title_icon"><img src="${pageContext.request.contextPath}/userstyle/images/bullet2.gif" alt="" title="" /></span>New products</div>
+            <div class="title"><span class="title_icon"><img src="userstyle/images/bullet2.gif" alt="" title="" /></span>New products</div>
 
             <div class="new_products">
 
                 <div class="new_prod_box">
                     <a href="details.html">product name</a>
                     <div class="new_prod_bg">
-                        <span class="new_icon"><img src="${pageContext.request.contextPath}/userstyle/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="${pageContext.request.contextPath}/userstyle/images/thumb1.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="userstyle/images/new_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="userstyle/images/thumb1.gif" alt="" title="" class="thumb" border="0" /></a>
                     </div>
                 </div>
 
                 <div class="new_prod_box">
                     <a href="details.html">product name</a>
                     <div class="new_prod_bg">
-                        <span class="new_icon"><img src="${pageContext.request.contextPath}/userstyle/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="${pageContext.request.contextPath}/userstyle/images/thumb2.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="userstyle/images/new_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="userstyle/images/thumb2.gif" alt="" title="" class="thumb" border="0" /></a>
                     </div>
                 </div>
 
                 <div class="new_prod_box">
                     <a href="details.html">product name</a>
                     <div class="new_prod_bg">
-                        <span class="new_icon"><img src="${pageContext.request.contextPath}/userstyle/images/new_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="${pageContext.request.contextPath}/userstyle/images/thumb3.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="userstyle/images/new_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="userstyle/images/thumb3.gif" alt="" title="" class="thumb" border="0" /></a>
                     </div>
                 </div>
 
@@ -109,15 +110,15 @@
 
 
             <div class="clear"></div>--%>
-            <iframe style="height: 100%;width: 100%;" id="leftContentFrameId" name="leftContentFrameName" scrolling="no" frameborder="0" src="${pageContext.request.contextPath}/product/home"></iframe>
+            <iframe style="height: 100%;width: 100%;" id="leftContentFrameId" name="leftContentFrameName" scrolling="no" frameborder="0" src="product/home"></iframe>
         </div><!--end of left content-->
 
         <div class="right_content">
             <div class="languages_box">
                 <span class="red">Languages:</span>
-                <a href="#" class="selected"><img src="${pageContext.request.contextPath}/userstyle/images/gb.gif" alt="" title="" border="0" /></a>
-                <a href="#"><img src="${pageContext.request.contextPath}/userstyle/images/fr.gif" alt="" title="" border="0" /></a>
-                <a href="#"><img src="${pageContext.request.contextPath}/userstyle/images/de.gif" alt="" title="" border="0" /></a>
+                <a href="#" class="selected"><img src="userstyle/images/gb.gif" alt="" title="" border="0" /></a>
+                <a href="#"><img src="userstyle/images/fr.gif" alt="" title="" border="0" /></a>
+                <a href="#"><img src="$userstyle/images/de.gif" alt="" title="" border="0" /></a>
             </div>
             <div class="currency">
                 <span class="red">Currency: </span>
@@ -128,7 +129,7 @@
 
 
             <div class="cart">
-                <div class="title"><span class="title_icon"><img src="${pageContext.request.contextPath}/userstyle/images/cart.gif" alt="" title="" /></span>My cart</div>
+                <div class="title"><span class="title_icon"><img src="userstyle/images/cart.gif" alt="" title="" /></span>My cart</div>
                 <div class="home_cart_content">
                     3 x items | <span class="red">TOTAL: 100$</span>
                 </div>
@@ -139,10 +140,10 @@
 
 
 
-            <div class="title"><span class="title_icon"><img src="${pageContext.request.contextPath}/userstyle/images/bullet3.gif" alt="" title="" /></span>About Our Shop</div>
+            <div class="title"><span class="title_icon"><img src="userstyle/images/bullet3.gif" alt="" title="" /></span>About Our Shop</div>
             <div class="about">
                 <p>
-                    <img src="${pageContext.request.contextPath}/userstyle/images/about.gif" alt="" title="" class="right" />
+                    <img src="userstyle/images/about.gif" alt="" title="" class="right" />
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
                 </p>
 
@@ -150,28 +151,28 @@
 
             <div class="right_box">
 
-                <div class="title"><span class="title_icon"><img src="${pageContext.request.contextPath}/userstyle/images/bullet4.gif" alt="" title="" /></span>热卖品种</div>
+                <div class="title"><span class="title_icon"><img src="userstyle/images/bullet4.gif" alt="" title="" /></span>热卖品种</div>
                 <div class="new_prod_box">
                     <a href="details.html">product name</a>
                     <div class="new_prod_bg">
-                        <span class="new_icon"><img src="${pageContext.request.contextPath}/userstyle/images/promo_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="${pageContext.request.contextPath}/userstyle/images/thumb1.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="userstyle/images/promo_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="userstyle/images/thumb1.gif" alt="" title="" class="thumb" border="0" /></a>
                     </div>
                 </div>
 
                 <div class="new_prod_box">
                     <a href="details.html">product name</a>
                     <div class="new_prod_bg">
-                        <span class="new_icon"><img src="${pageContext.request.contextPath}/userstyle/images/promo_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="${pageContext.request.contextPath}/userstyle/images/thumb2.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="userstyle/images/promo_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="userstyle/images/thumb2.gif" alt="" title="" class="thumb" border="0" /></a>
                     </div>
                 </div>
 
                 <div class="new_prod_box">
                     <a href="details.html">product name</a>
                     <div class="new_prod_bg">
-                        <span class="new_icon"><img src="${pageContext.request.contextPath}/userstyle/images/promo_icon.gif" alt="" title="" /></span>
-                        <a href="details.html"><img src="${pageContext.request.contextPath}/userstyle/images/thumb3.gif" alt="" title="" class="thumb" border="0" /></a>
+                        <span class="new_icon"><img src="userstyle/images/promo_icon.gif" alt="" title="" /></span>
+                        <a href="details.html"><img src="userstyle/images/thumb3.gif" alt="" title="" class="thumb" border="0" /></a>
                     </div>
                 </div>
 
@@ -179,7 +180,7 @@
 
             <div class="right_box">
 
-                <div class="title"><span class="title_icon"><img src="${pageContext.request.contextPath}/userstyle/images/bullet5.gif" alt="" title="" /></span>材质选购</div>
+                <div class="title"><span class="title_icon"><img src="userstyle/images/bullet5.gif" alt="" title="" /></span>材质选购</div>
 
                 <ul class="list">
                     <li><a href="#">玫瑰花</a></li>
@@ -195,7 +196,7 @@
                     <li><a href="#">满天星花</a></li>
                 </ul>
 
-                <div class="title"><span class="title_icon"><img src="${pageContext.request.contextPath}/userstyle/images/bullet6.gif" alt="" title="" /></span>需求选购</div>
+                <div class="title"><span class="title_icon"><img src="userstyle/images/bullet6.gif" alt="" title="" /></span>需求选购</div>
 
                 <ul class="list">
                     <li><a href="#">3.14白色情人节</a></li>
@@ -222,7 +223,7 @@
 
 
     <div class="footer">
-        <div class="left_footer"><img src="${pageContext.request.contextPath}/userstyle/images/footer_logo.gif" alt="" title="" /><br /> <a href="http://www.cssmoban.com/" title="free templates">cssmoban.com</a></div>
+        <div class="left_footer"><img src="userstyle/images/footer_logo.gif" alt="" title="" /><br /> <a href="http://www.cssmoban.com/" title="free templates">cssmoban.com</a></div>
         <div class="right_footer">
             <a href="#">home</a>
             <a href="#">about us</a>

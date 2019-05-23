@@ -1,14 +1,15 @@
 package com.yxy.edu.service.impl;
 
-import com.yxy.edu.mapper.UserMapper;
-import com.yxy.edu.model.User;
-import com.yxy.edu.service.IUserService;
+import com.yxy.edu.mapper.CtlParamMapper;
+import com.yxy.edu.model.CtlParam;
+import com.yxy.edu.service.ICtlParamService;
 import com.yxy.edu.service.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author : yuxiangying
@@ -16,26 +17,26 @@ import javax.annotation.Resource;
  * @Project: EduProject
  * @Package com.yxy.edu.service.impl
  * @Description: TODO
- * @date Date : 2019年05月15日 11:04
+ * @date Date : 2019年05月22日 14:57
  */
 @Service
 @Transactional
-public class UserServiceImpl extends BaseServiceImpl<User> implements IUserService {
+public class CtlParamServiceImpl extends BaseServiceImpl<CtlParam> implements ICtlParamService {
     @Autowired
-    private UserMapper userMapper;
+    private CtlParamMapper ctlParamMapper;
 
     @Override
-    public User login(User user) {
-        return userMapper.login(user);
+    public List<CtlParam> selectByType(String ctlType) {
+        return ctlParamMapper.selectByType(ctlType);
     }
 
     @Override
-    public User findById(Integer id) {
-        return userMapper.selectByPrimaryKey(id);
+    public CtlParam findById(Integer id) {
+        return null;
     }
 
     @Override
-    public User findByUUID(String uuid) {
+    public CtlParam findByUUID(String uuid) {
         return null;
     }
 
@@ -50,12 +51,12 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements IUserServi
     }
 
     @Override
-    public void update(User user) {
+    public void update(CtlParam ctlParam) {
 
     }
 
     @Override
-    public void save(User user) {
+    public void save(CtlParam ctlParam) {
 
     }
 }

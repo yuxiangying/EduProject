@@ -12,7 +12,7 @@ import java.util.Map;
  * @date Date : 2019年05月20日 14:33
  */
 public class Result extends HashMap<String, Object> {
-    private static final Long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     public static Result error(){
         return error(500,"未知异常，请联系管理员");
@@ -60,6 +60,4 @@ public class Result extends HashMap<String, Object> {
         r.put(key, value);
         return r;
     }
-
-
 }

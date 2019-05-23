@@ -8,6 +8,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <base href="<%=basePath+"/"%>"><%--此作用就是省略写全路径--%>
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
@@ -15,19 +16,19 @@
     <link rel="Bookmark" href="/favicon.ico" >
     <link rel="Shortcut Icon" href="/favicon.ico" />
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/managerstyle/lib/html5shiv.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/managerstyle/lib/respond.min.js"></script>
+    <script type="text/javascript" src="managerstyle/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="managerstyle/lib/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/managerstyle/static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/managerstyle/static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/managerstyle/lib/Hui-iconfont/1.0.8/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/managerstyle/static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/managerstyle/static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="managerstyle/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="managerstyle/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="managerstyle/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="managerstyle/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="managerstyle/static/h-ui.admin/css/style.css" />
     <!--[if IE 6]>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/managerstyle/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="managerstyle/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>H-ui.admin v3.1</title>
+    <title>Flower manager</title>
     <meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
     <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
@@ -82,7 +83,7 @@
             <dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="${pageContext.request.contextPath}/user/article-list" data-title="资讯管理" href="javascript:void(0)">资讯管理</a></li>
+                    <li><a data-href="user/article-list" data-title="资讯管理" href="javascript:void(0)">资讯管理</a></li>
                 </ul>
             </dd>
         </dl>
@@ -98,9 +99,9 @@
             <dt><i class="Hui-iconfont">&#xe620;</i> 产品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="${pageContext.request.contextPath}/manager/product/brand" data-title="品种管理" href="javascript:void(0)">品种管理</a></li>
-                    <li><a data-href="${pageContext.request.contextPath}/manager/product/category" data-title="分类管理" href="javascript:void(0)">分类管理</a></li>
-                    <li><a data-href="${pageContext.request.contextPath}/manager/product/list" data-title="产品管理" href="javascript:void(0)">产品管理</a></li>
+                    <li><a data-href="manager/product/brand" data-title="品种管理" href="javascript:void(0)">品种管理</a></li>
+                    <li><a data-href="manager/product/category" data-title="分类管理" href="javascript:void(0)">分类管理</a></li>
+                    <li><a data-href="manager/product/list" data-title="产品管理" href="javascript:void(0)">产品管理</a></li>
                 </ul>
             </dd>
         </dl>
@@ -117,13 +118,13 @@
             <dt><i class="Hui-iconfont">&#xe60d;</i> 会员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="${pageContext.request.contextPath}/member/list" data-title="会员列表" href="javascript:;">会员列表</a></li>
-                    <li><a data-href="${pageContext.request.contextPath}/member/del" data-title="删除的会员" href="javascript:;">删除的会员</a></li>
-                    <li><a data-href="${pageContext.request.contextPath}/member/level" data-title="等级管理" href="javascript:;">等级管理</a></li>
-                    <li><a data-href="${pageContext.request.contextPath}/member/scoreoperation" data-title="积分管理" href="javascript:;">积分管理</a></li>
-                    <li><a data-href="${pageContext.request.contextPath}/member/record-browse" data-title="浏览记录" href="javascript:void(0)">浏览记录</a></li>
-                    <li><a data-href="${pageContext.request.contextPath}/member/record-download" data-title="下载记录" href="javascript:void(0)">下载记录</a></li>
-                    <li><a data-href="${pageContext.request.contextPath}/member/record-share" data-title="分享记录" href="javascript:void(0)">分享记录</a></li>
+                    <li><a data-href="member/list" data-title="会员列表" href="javascript:;">会员列表</a></li>
+                    <li><a data-href="member/del" data-title="删除的会员" href="javascript:;">删除的会员</a></li>
+                    <li><a data-href="member/level" data-title="等级管理" href="javascript:;">等级管理</a></li>
+                    <li><a data-href="member/scoreoperation" data-title="积分管理" href="javascript:;">积分管理</a></li>
+                    <li><a data-href="member/record-browse" data-title="浏览记录" href="javascript:void(0)">浏览记录</a></li>
+                    <li><a data-href="member/record-download" data-title="下载记录" href="javascript:void(0)">下载记录</a></li>
+                    <li><a data-href="member/record-share" data-title="分享记录" href="javascript:void(0)">分享记录</a></li>
                 </ul>
             </dd>
         </dl>
@@ -192,13 +193,14 @@
     </ul>
 </div>
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="${pageContext.request.contextPath}/managerstyle/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/managerstyle/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/managerstyle/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/managerstyle/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="managerstyle/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="managerstyle/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="managerstyle/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="managerstyle/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="${pageContext.request.contextPath}/managerstyle/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+<script type="text/javascript" src="managerstyle/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+<script type="text/javascript" src="js/manager/managerIndex.js"></script>
 <script type="text/javascript">
     $(function(){
         /*$("#min_title_list li").contextMenu('Huiadminmenu', {
