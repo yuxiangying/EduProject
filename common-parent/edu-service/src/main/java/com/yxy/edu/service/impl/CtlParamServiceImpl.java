@@ -31,7 +31,7 @@ public class CtlParamServiceImpl extends BaseServiceImpl<CtlParam> implements IC
     }
 
     @Override
-    public CtlParam findById(Integer id) {
+    public CtlParam findById(Long id) {
         return null;
     }
 
@@ -41,7 +41,7 @@ public class CtlParamServiceImpl extends BaseServiceImpl<CtlParam> implements IC
     }
 
     @Override
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
 
     }
 

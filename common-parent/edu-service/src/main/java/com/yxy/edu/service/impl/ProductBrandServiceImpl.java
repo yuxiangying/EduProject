@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @author : yuxiangying
  * @version V1.0
@@ -22,8 +24,8 @@ public class ProductBrandServiceImpl extends BaseServiceImpl<ProductBrand> imple
     @Autowired
     private ProductBrandMapper productBrandMapper;
     @Override
-    public ProductBrand findById(Integer id) {
-        return null;
+    public ProductBrand findById(Long id) {
+        return this.productBrandMapper.selectByPrimaryKey(id);
     }
 
     @Override
@@ -32,8 +34,8 @@ public class ProductBrandServiceImpl extends BaseServiceImpl<ProductBrand> imple
     }
 
     @Override
-    public void deleteById(Integer id) {
-
+    public void deleteById(Long id) {
+        this.productBrandMapper.deleteByPrimaryKey(id);
     }
 
     @Override
@@ -49,5 +51,10 @@ public class ProductBrandServiceImpl extends BaseServiceImpl<ProductBrand> imple
     @Override
     public void save(ProductBrand productBrand) {
         this.productBrandMapper.insert(productBrand);
+    }
+
+    @Override
+    public List<ProductBrand> selectAll() {
+        return productBrandMapper.selectAll();
     }
 }

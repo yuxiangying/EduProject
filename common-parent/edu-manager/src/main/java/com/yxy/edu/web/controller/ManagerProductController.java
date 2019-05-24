@@ -17,10 +17,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @author : yuxiangying
@@ -49,6 +46,26 @@ public class ManagerProductController {
     public String brand(){
         System.out.println("..........");
         return "managerPage/product-brand";
+    }
+
+    /**
+     * @Author 余想英
+     * @Description:品种编辑
+     * @Date 17:27 17:27
+     * @Param []
+     * @return java.lang.String
+     **/
+    @RequestMapping("brand-edit")
+    public String brandEdit(@RequestParam String brandId,
+                            HttpServletRequest request,HttpServletResponse response){
+        List<CtlParam> brandPlaces = this.ctlParamService.selectByType("productBrandPlace");
+        request.setAttribute("brandPlaces",brandPlaces);
+        ProductBrand productBrand = this.productBrandService.findById(Long.parseLong(brandId));
+        if(productBrand!=null){
+            request.setAttribute("productBrand",productBrand);
+        }
+        System.out.println("..........");
+        return "managerPage/product-brand-edit";
     }
     /**
      * @Author 余想英
@@ -102,7 +119,7 @@ public class ManagerProductController {
 
     /**
      * @Author 余想英
-     * @Description:产品管理
+     * @Description:产品产地枚举
      * @Date 17:27 17:27
      * @Param []
      * @return java.lang.String
@@ -130,7 +147,7 @@ public class ManagerProductController {
             //文件存储位置
             ServletContext scontext = request.getSession().getServletContext();
             // 获取绝对路径
-            String path = scontext.getRealPath("") + "uploadFiles"+File.separator+"brandLogo";
+            String path = scontext.getRealPath("")+"img" +File.separator + "uploadFiles"+File.separator+"brandLogo";
             String lastname = fileName.substring(fileName.lastIndexOf("."), fileName.length());//文件后缀
             //fileName = new Date().getTime() + "_" + new Random().nextInt(1000) + lastname;
             fileName = new Date().getTime() + "_" + brandName + lastname;//当前时间+随机数=新的文件名
@@ -144,7 +161,7 @@ public class ManagerProductController {
             try {
                 // 将上传的文件写到服务器上指定的文件。
                 file.transferTo(targetFile);
-                url = "uploadFiles" + File.separator + "brandLogo" + File.separator + fileName;//保存路径，便于后续存入数据库
+                url = "img"+ File.separator + "uploadFiles" + File.separator + "brandLogo" + File.separator + fileName;//保存路径，便于后续存入数据库
                 //插入产品种类数据
                 ProductBrand productBrand = new ProductBrand();
                 productBrand.setBrandname(brandName);
@@ -172,10 +189,37 @@ public class ManagerProductController {
      **/
     @RequestMapping("productBrandList")
     @ResponseBody
-    public List<ProductBrand> productBrands(){
+    public Map<String, Object> productBrands(){
+        Map<String, Object> map = new HashMap<String, Object>();
+        int count=0;
         List<ProductBrand> productBrands = new ArrayList<ProductBrand>();
-        return productBrands;
+        productBrands = this.productBrandService.selectAll();
+        if(productBrands!=null && productBrands.size()>0){
+            count = productBrands.size();
+        }
+        map.put("recordsTotal", count);
+        map.put("recordsFiltered", count);
+        map.put("aaData", productBrands);
+        return map;
 
+    }
+
+    /**
+     * @Author 余想英
+     * @Description:产品品牌列表
+     * @Date 17:27 17:27
+     * @Param []
+     * @return java.lang.String
+     **/
+    @RequestMapping("deleOneBrand")
+    @ResponseBody
+    public Result deleOneBrand(@RequestParam String brandId){
+        try {
+            this.productBrandService.deleteById(Long.parseLong(brandId));
+            return Result.success(0,"操作成功！");
+        }catch (Exception e){
+            return Result.error(1,"数据异常");
+        }
     }
 
 }

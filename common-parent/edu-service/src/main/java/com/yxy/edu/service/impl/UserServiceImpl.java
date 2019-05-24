@@ -30,7 +30,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements IUserServi
     }
 
     @Override
-    public User findById(Integer id) {
+    public User findById(Long id) {
         return userMapper.selectByPrimaryKey(id);
     }
 
@@ -40,7 +40,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements IUserServi
     }
 
     @Override
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
 
     }
 

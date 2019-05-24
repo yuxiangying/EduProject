@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @RequestMapping("find")
-    public String find(Integer id){
+    public String find(Long id){
         User user = this.userService.findById(id);
         System.out.println(user);
         return null;

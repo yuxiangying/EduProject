@@ -315,4 +315,15 @@
       UPDATETIME = #{updatetime,jdbcType=TIMESTAMP}
     where ID = #{id,jdbcType=DECIMAL}
   </update>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM T_PRODUCT_BRAND
+    <!--WHERE
+      <if test="keyWord !=null">
+        BRANDNAME like '%${keyWord}%'
+        or REMARK like '%${keyWord}%'
+      </if>-->
+  </select>
 </mapper>

@@ -93,4 +93,6 @@ public interface ProductBrandMapper {
      * @mbggenerated Fri May 17 19:13:45 CST 2019
      */
     int updateByPrimaryKey(ProductBrand record);
+
+    List<ProductBrand> selectAll();
 }

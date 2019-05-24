@@ -3,6 +3,8 @@ package com.yxy.edu.service;
 import com.yxy.edu.model.ProductBrand;
 import com.yxy.edu.service.base.IBaseService;
 
+import java.util.List;
+
 /**
  * @author : yuxiangying
  * @version V1.0
@@ -12,4 +14,5 @@ import com.yxy.edu.service.base.IBaseService;
  * @date Date : 2019年05月22日 17:46
  */
 public interface IProductBrandService extends IBaseService<ProductBrand> {
+    public List<ProductBrand> selectAll();
 }

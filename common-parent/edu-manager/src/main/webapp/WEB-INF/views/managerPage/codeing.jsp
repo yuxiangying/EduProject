@@ -27,7 +27,7 @@
 <body>
 <div class="page-container">
     <h2 class="text-c">Sorry！功能暂且开发中……<br>
-        下一版本更新！</h2>
+        下一版本更新！${productBrand.id}</h2>
 </div>
 </body>
 </html>
