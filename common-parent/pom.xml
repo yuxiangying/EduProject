@@ -20,7 +20,7 @@
 
     <!--公共的版本号管理-->
     <properties>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.13.1</junit.version>
         <!--<pring.version>4.3.5.RELEASE</pring.version>-->
         <pring.version>4.3.5.RELEASE</pring.version>
         <!-- mybatis版本号 -->
